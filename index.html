@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluteOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/42f80944c6.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: "Fredoka", sans-seif;
+            margin: 0px;
+            overflow-x: hidden;
+        }
+        #topbar {
+            font-size: 15px;
+            margin-top: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 42%, rgba(0,212,255,1) 100%);
+            color: white;
+            font-size: 25px;
+        }
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        #main {
+            color: white;
+            font-size: 25px;
+        }
+        .context-menu {
+            position: absolute;
+            text-align: center;
+            background: lightgray;
+            border: 1px solid black;
+        }
+  
+        .context-menu ul {
+            padding: 0px;
+            margin: 0px;
+            min-width: 150px;
+            list-style: none;
+        }
+  
+        .context-menu ul li {
+            padding-bottom: 7px;
+            padding-top: 7px;
+            border: 1px solid black;
+        }
+  
+        .context-menu ul li a {
+            text-decoration: none;
+            color: black;
+        }
+  
+        .context-menu ul li:hover {
+            background: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="topbar">
+        <button id="main" class="fa-solid fa-face-meh-blank" title="access">
+            <div id="contextMenu" class="context-menu" style="display:none">
+                <ul>
+                    <li><a href="#">Element-1</a></li>
+                    <li><a href="#">Element-2</a></li>
+                    <li><a href="#">Element-3</a></li>
+                    <li><a href="#">Element-4</a></li>
+                    <li><a href="#">Element-5</a></li>
+                    <li><a href="#">Element-6</a></li>
+                    <li><a href="#">Element-7</a></li>
+                </ul>
+            </div>
+        </button>
+    </h1>
+    Hello. Today 
+    <script>
+        document.onclick = hideMenu;
+        document.oncontextmenu = rightClick;
+  
+        function hideMenu() {
+            document.getElementById(
+                "contextMenu").style.display = "none"
+        }
+  
+        function rightClick(e) {
+            e.preventDefault();
+  
+            if (document.getElementById(
+                "contextMenu").style.display == "block")
+                hideMenu();
+            else {
+                var menu = document
+                    .getElementById("contextMenu")
+                      
+                menu.style.display = 'block';
+                menu.style.left = e.pageX + "px";
+                menu.style.top = e.pageY + "px";
+            }
+        }
+    </script>
+</body>
+</html>
