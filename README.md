@@ -1,3 +1,3 @@
 # flute-os
 
-This project can be opened on [vercel](myflute-os.vercel.app)
+This project can be opened on [vercel](https://myflute-os.vercel.app)
