@@ -62,9 +62,36 @@
         .context-menu ul li:hover {
             background: darkgray;
         }
+        .card {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 0;
+        }
+        .card::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .title {
+            margin: 0px;
+        }
+        .desc {
+            float: left;
+            width: 50%;
+        }
+        #jspng {
+            float: right;
+            width: 125px;
+            height: 100px;
+        }
+        h1 a {
+            color: black;
+            text-decoration: initial;
+        }
     </style>
 </head>
 <body>
+    <noscript>ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!v</noscript>
     <h1 id="topbar">
         <button id="main" class="fa-solid fa-face-meh-blank" title="access">
             <div id="contextMenu" class="context-menu" style="display:none">
@@ -75,6 +102,15 @@
         </button>
     </h1>
     Hello. Today I will show you how to eat apples.
+    <div class="card">
+        <h1 class="title" href="jscourse.html">
+            <a href="jscourse.html"><i class="fa-solid fa-link fa-2xs"></i>Javascript Course</a>
+        </h1>
+        <p class="desc">
+            This is a course made by me, the creator of FluteOS (not an OS btw). It's not like I'm a pro at Javascript, just one of my many hobbies.
+        </p>
+        <img id="jspng" src="js.png" alt="Image of Javascript logo.">
+    </div>
     <script src="index.js"></script>
     <script>
         document.onclick = hideMenu;
