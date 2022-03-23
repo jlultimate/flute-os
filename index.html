@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.jpeg">
     <title>FluteOS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,33 @@
             font-family: "Fredoka", sans-seif;
             margin: 0px;
             overflow-x: hidden;
+            background-attachment: fixed;
+            background-image: url("https://images.unsplash.com/photo-1615859131861-052f0641a60e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1589&q=80");
+            color: white;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        kbd {
+            margin: 0px 0.1em;
+            padding: 0.1em 0.6em;
+            border-radius: 3px;
+            border: 1px solid rgb(204, 204, 204);
+            color: rgb(51, 51, 51);
+            line-height: 1.4;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 10px;
+            display: inline-block;
+            box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
+            background-color: rgb(247, 247, 247);
+            -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+            -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            text-shadow: 0 1px 0 #fff;
         }
         #topbar {
             font-size: 15px;
@@ -24,6 +52,7 @@
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 42%, rgba(0,212,255,1) 100%);
             color: white;
             font-size: 25px;
+            text-align: left;
         }
         button {
             border: none;
@@ -38,7 +67,7 @@
             position: absolute;
             text-align: center;
             background: lightgray;
-            border: 1px solid black;
+            border: 1px solid white;
         }
   
         .context-menu ul {
@@ -51,7 +80,7 @@
         .context-menu ul li {
             padding-bottom: 7px;
             padding-top: 7px;
-            border: 1px solid black;
+            border: 1px solid white;
         }
   
         .context-menu ul li a {
@@ -63,9 +92,14 @@
             background: darkgray;
         }
         .card {
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 5px;
-            padding: 0;
+            padding: 5px;
+            width: 85%;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: white;
         }
         .card::after {
             content: "";
@@ -77,13 +111,27 @@
         }
         .desc {
             float: left;
-            width: 50%;
+            width: 25%;
+            margin-left: 15%;
         }
         #jspng {
             float: right;
             width: 125px;
             height: 100px;
+            margin-right: 15%;
+            margin-top: 7.5px;
         }
+        @media screen and (max-width:700px) {
+            .desc {
+                width: 50%;
+                margin-left: 0px;
+            }
+            #jspng {
+                margin-right: 0px;
+                margin-top: 10px;
+            }
+        }
+        
         h1 a {
             color: black;
             text-decoration: initial;
@@ -104,33 +152,30 @@
     Hello. Today I will show you how to eat apples.
     <div class="card">
         <h1 class="title" href="jscourse.html">
-            <a href="jscourse.html"><i class="fa-solid fa-link fa-2xs"></i>Javascript Course</a>
+            <a href="jscourse.html" style="color:white;"><i class="fa-solid fa-link fa-2xs"></i>Javascript Course</a>
         </h1>
         <p class="desc">
             This is a course made by me, the creator of FluteOS (not an OS btw). It's not like I'm a pro at Javascript, just one of my many hobbies.
         </p>
         <img id="jspng" src="js.png" alt="Image of Javascript logo.">
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script src="index.js"></script>
     <script>
         document.onclick = hideMenu;
         document.oncontextmenu = rightClick;
   
         function hideMenu() {
-            document.getElementById(
-                "contextMenu").style.display = "none"
+            document.getElementById("contextMenu").style.display = "none"
         }
   
         function rightClick(e) {
             e.preventDefault();
   
-            if (document.getElementById(
-                "contextMenu").style.display == "block")
+            if (document.getElementById("contextMenu").style.display == "block")
                 hideMenu();
             else {
-                var menu = document
-                    .getElementById("contextMenu")
-                      
+                var menu = document.getElementById("contextMenu");
                 menu.style.display = 'block';
                 menu.style.left = e.pageX + "px";
                 menu.style.top = e.pageY + "px";
