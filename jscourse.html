@@ -3,9 +3,105 @@
   <head>
     <meta charset="utf-8">
     <title>Javascript Tutorial - FluteOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/42f80944c6.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+            font-family: "Fredoka", sans-seif;
+            margin: 0px;
+            overflow-x: hidden;
+      }
+      #topbar {
+          font-size: 15px;
+          margin-top: 0px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background: rgb(2,0,36);
+          background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 42%, rgba(0,212,255,1) 100%);
+          color: white;
+          font-size: 25px;
+      }
+      button {
+          border: none;
+          background: none;
+          cursor: pointer;
+      }
+      #topbar, #main, #go-back, #bruh1, #bruh2 {
+          color: white;
+          font-size: 25px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello world</h1>
-    <p>Hi</p>
+    <noscript>ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!</noscript>
+    <h1 id="topbar">
+        <button id="main" class="fa-solid fa-face-meh-blank" title="access">
+        </button>
+        <button id="goback">
+          <i class="fa-solid fa-arrow-left" id="bruh1"></i>
+        </button>
+        <button id="next">
+          <i class="fa-solid fa-arrow-right" id="bruh2"></i>
+        </button>
+    </h1>
+    <div>
+      <h1 id="title">Javascript Course</h1>
+      <div id="stuff"></div>
+    </div>
+    <script>
+      var title = document.getElementById("title");
+      var stuff = document.getElementById("stuff");
+      var goback = document.getElementById("goback");
+      var next = document.getElementById("next");
+      var pagetitles = {
+        intro: "L0: Javascript Course",
+        ultbegin1: "L0: What is programming (you can skip this)",
+      };
+      var pagestuffs = {
+        intro: "<p>Javascript, or simply JS, is a scripting language used to make websites interactive and more. Most of the time, it's <abbr title=\"Hyper Text Markup Language\">HTML</abbr> for the bare-bone text, CSS or Sass to make everything look pretty, and Javascript along with a framework like JQuery.js or React.js to make cool things like 3d or events. Javascript is usually allready installed on your machine, and can be used with a \".js\" file.</p>",
+        ultbegin1: "<p>If you know what programming is or how it works already, then you can skip this lesson.<br><br>Programming, or more commonly known as \"coding\" (it's more formal to use programming) is what software-engineers do to make software, or the apps, websites, etc. on your computer screen. Software can be from a simple plain-website to Minecraft-- even the Metaverse!<br><br>When creating a program, you usually would use a programming language. A programming language is like a language, but it focuses more on creating an application. There are many programming languages in the world-- actually, it is possible to create <em>you</em> to create one right now, but it would be too hard. Most popular programming languages: Javascript, Python, Java, C++, C, C+, R, Swift, and Go.</p>"
+      };
+      var pagenum = 2;
+      function ez(titlez, stuffz){
+        title.innerHTML = titlez;
+        stuff.innerHTML = stuffz;
+      };
+      goback.addEventListener("click", function(){
+        if(pagenum !== 1){
+          pagenum--;
+        }
+        if(pagenum === 1){
+          title.innerHTML = pagetitles.intro;
+          stuff.innerHTML = pagestuffs.intro;
+        } else if(pagenum === 2){
+          ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+        }
+      });
+      if(pagenum === 1){
+        title.innerHTML = pagetitles.intro;
+        stuff.innerHTML = pagestuffs.intro;
+      } else if(pagenum === 2){
+        ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+      };
+      next.addEventListener("click", function(){
+        if(pagenum !== Object.keys(pagestuffs).length && pagenum !== Object.keys(pagetitles).length){
+          pagenum++;
+        }
+        if(pagenum === 1){
+          title.innerHTML = pagetitles.intro;
+          stuff.innerHTML = pagestuffs.intro;
+        } else if(pagenum === 2){
+          ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+        }
+      });
+      if(pagenum === 1){
+        title.innerHTML = pagetitles.intro;
+        stuff.innerHTML = pagestuffs.intro;
+      } else if(pagenum === 2){
+        ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+      };
+    </script>
   </body>
 </html>
