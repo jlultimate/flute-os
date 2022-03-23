@@ -5,13 +5,14 @@
     <title>Javascript Tutorial - FluteOS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="favicon.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/42f80944c6.js" crossorigin="anonymous"></script>
     <style>
       body {
-            font-family: "Fredoka", sans-seif;
-            margin: 0px;
-            overflow-x: hidden;
+          font-family: "Fredoka", sans-seif;
+          margin: 0px;
+          overflow-x: hidden;
       }
       #topbar {
           font-size: 15px;
@@ -23,10 +24,29 @@
           color: white;
           font-size: 25px;
       }
-      button {
+      kbd {
+          margin: 0px 0.1em;
+          padding: 0.1em 0.6em;
+          border-radius: 3px;
+          border: 1px solid rgb(204, 204, 204);
+          color: rgb(51, 51, 51);
+          line-height: 1.4;
+          font-family: Arial,Helvetica,sans-serif;
+          font-size: 10px;
+          display: inline-block;
+          box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
+          background-color: rgb(247, 247, 247);
+          -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+          -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+          text-shadow: 0 1px 0 #fff;
+      }
+      a.fa-face-meh-blank, button {
           border: none;
           background: none;
           cursor: pointer;
+          text-decoration: none;
       }
       #topbar, #main, #go-back, #bruh1, #bruh2 {
           color: white;
@@ -37,8 +57,7 @@
   <body>
     <noscript>ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!ENABLE JAVASCRIPT!!!!!!!!</noscript>
     <h1 id="topbar">
-        <button id="main" class="fa-solid fa-face-meh-blank" title="access">
-        </button>
+        <a id="main" class="fa-solid fa-face-meh-blank" title="access" href="index.html"> JS</a>
         <button id="goback">
           <i class="fa-solid fa-arrow-left" id="bruh1"></i>
         </button>
@@ -50,6 +69,7 @@
       <h1 id="title">Javascript Course</h1>
       <div id="stuff"></div>
     </div>
+
     <script>
       var title = document.getElementById("title");
       var stuff = document.getElementById("stuff");
@@ -58,12 +78,14 @@
       var pagetitles = {
         intro: "L0: Javascript Course",
         ultbegin1: "L0: What is programming (you can skip this)",
+        printingatypes: "L1: Outputing Text and JS Types"
       };
       var pagestuffs = {
-        intro: "<p>Javascript, or simply JS, is a scripting language used to make websites interactive and more. Most of the time, it's <abbr title=\"Hyper Text Markup Language\">HTML</abbr> for the bare-bone text, CSS or Sass to make everything look pretty, and Javascript along with a framework like JQuery.js or React.js to make cool things like 3d or events. Javascript is usually allready installed on your machine, and can be used with a \".js\" file.</p>",
-        ultbegin1: "<p>If you know what programming is or how it works already, then you can skip this lesson.<br><br>Programming, or more commonly known as \"coding\" (it's more formal to use programming) is what software-engineers do to make software, or the apps, websites, etc. on your computer screen. Software can be from a simple plain-website to Minecraft-- even the Metaverse!<br><br>When creating a program, you usually would use a programming language. A programming language is like a language, but it focuses more on creating an application. There are many programming languages in the world-- actually, it is possible to create <em>you</em> to create one right now, but it would be too hard. Most popular programming languages: Javascript, Python, Java, C++, C, C+, R, Swift, and Go.</p>"
+        intro: "<p>Javascript, or simply JS, is a scripting language used to make websites interactive and more. Most of the time, it's <abbr title=\"Hyper Text Markup Language\">HTML</abbr> for the bare-bone text, CSS or Sass to make everything look pretty, and Javascript along with a framework like JQuery.js or React.js to make cool things like 3d or events. Javascript is usually already installed on your machine, and can be used with a \".js\" file.<br><br>If you want to run Javascript in a browser, create a file ending in .js and add this: &lt;script src=\"filename.js\"&gt;&lt;/script&gt;<br><br>use the arrow keys on the top to go to the next lesson.</p>",
+        ultbegin1: "<p>If you know what programming is or how it works already, then you can skip this lesson.<br><br>Programming, or more commonly known as \"coding\" (it's more formal to use the word \"programming\") is what software-engineers do to make software, or the apps, websites, etc. on your computer screen. Software can be from a simple plain website to Minecraft-- even the Metaverse! When creating a program, you usually would use a programming language. A programming language is like a language, but it focuses more on creating an application. There are many programming languages in the world-- actually, it is possible to for <em>you</em> to create one right now, but it would be too hard. Popular programming languages include: Javascript, Python, Java, C++, C, C+, R, Swift, and Go.</p>",
+        printingatypes: "<p>In Javascript, a function is a block of code executed in one line, so you can easily repeat code. Defining a function means to create one, and a pre-defined function means a function thats already created, most of the time when your system downloads Javascript. Let's talk more about functions later. The most basic pre-defined function is the console.log() function, used to print text to the console.A function is called with its name (in this case console.log) with a pair of parentheses holding the arguments for the function parameters. (Again, let's talk more about functions later.) The first parameter of console.log is the text you want to print. For example:<img src=\"carbon (1).png\" width= \"500px\" style=\"display:block;margin:auto;\">Open your HTML website in the browser using <kbd>ctrl+o</kbd> and press <kbd>ctrl+shift+i</kbd> to open the console. There, you should see Hello World printed. If you're not coding right now, you can go to the FluteOS homepage and open the console. You may be wondering why we need to put quotation marks around the text, which is because if you don't Javascript will think you are using variables or keywords (next lesson).<br><br><h1>Types</h1>Text contained by quotation marks is called a string. If you want to print out a number, you can either do \"1\" or 1. Hey, that's another type! Here is a list of types:<ul><li>String: \"text\"</li><li>number: 123456789</li><li>bigint type: a big number</li><li>boolean:true/false</li><li>null: (means nothing) null</li><li>undefined: undefined variable or function</li><li>array: [thing, thing, thing] (a list of values)</li><li>object: {propertyname: value} (dictionary)</li></ul>Today's lesson challenge: log out any type in the console, then add another console.log to print what type it is.</p>"
       };
-      var pagenum = 2;
+      var pagenum = 1;
       function ez(titlez, stuffz){
         title.innerHTML = titlez;
         stuff.innerHTML = stuffz;
@@ -77,6 +99,8 @@
           stuff.innerHTML = pagestuffs.intro;
         } else if(pagenum === 2){
           ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+        } else if(pagenum === 3){
+          ez(pagetitles.printingatypes, pagestuffs.printingatypes);
         }
       });
       if(pagenum === 1){
@@ -84,7 +108,9 @@
         stuff.innerHTML = pagestuffs.intro;
       } else if(pagenum === 2){
         ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
-      };
+      } else if(pagenum === 3){
+        ez(pagetitles.printingatypes, pagestuffs.printingatypes);
+      }
       next.addEventListener("click", function(){
         if(pagenum !== Object.keys(pagestuffs).length && pagenum !== Object.keys(pagetitles).length){
           pagenum++;
@@ -94,14 +120,10 @@
           stuff.innerHTML = pagestuffs.intro;
         } else if(pagenum === 2){
           ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
+        } else if(pagenum === 3){
+          ez(pagetitles.printingatypes, pagestuffs.printingatypes);
         }
       });
-      if(pagenum === 1){
-        title.innerHTML = pagetitles.intro;
-        stuff.innerHTML = pagestuffs.intro;
-      } else if(pagenum === 2){
-        ez(pagetitles.ultbegin1, pagestuffs.ultbegin1);
-      };
     </script>
   </body>
 </html>
