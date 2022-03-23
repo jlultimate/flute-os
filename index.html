@@ -57,7 +57,7 @@
         button {
             border: none;
             background: none;
-            cursor: pointer; 
+            cursor: pointer;
         }
         #main {
             color: white;
@@ -114,7 +114,7 @@
             width: 25%;
             margin-left: 15%;
         }
-        #jspng {
+        #jspng, #calcpng {
             float: right;
             width: 125px;
             height: 100px;
@@ -126,7 +126,7 @@
                 width: 50%;
                 margin-left: 0px;
             }
-            #jspng {
+            #jspng, #calcpng {
                 margin-right: 0px;
                 margin-top: 10px;
             }
@@ -159,7 +159,18 @@
         </p>
         <img id="jspng" src="js.png" alt="Image of Javascript logo.">
     </div>
+    <div class="card">
+        <h1 class="title" href="calculator://"><a href="calculator://" style="color:white"><i class="fa-solid fa-link fa-2xs"></i> Calculator</a></h1>
+        <p class="desc">I got kind of lazy here so I just linked this to Windows Calulator. I'm hoping this webpage could be a replacement to an OS, so that's why I'm making this.</p>
+        <img id="calcpng" src="calculator.png">
+    </div>
+    <div class="card">
+        <h1 class="title" href="eng.html"><a href="eng.html" style="color:white"><i class="fa-solid fa-link fa-2xs"></i> English Reading</a></h1>
+        <p class="desc">Practice English!Practice English!Practice English!Practice English!Practice English!Practice English!Practice English!Practice English!</p>
+        <img id="calcpng" src="english.webp">
+    </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="index.js"></script>
     <script>
         document.onclick = hideMenu;
         document.oncontextmenu = rightClick;
@@ -176,7 +187,7 @@
             else {
                 var menu = document.getElementById("contextMenu");
                 menu.style.display = 'block';
-                menu.style.left = e.pageX + "px"; 
+                menu.style.left = e.pageX + "px";
                 menu.style.top = e.pageY + "px";
             }
         }
